@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gonçalo Moreira Neves - CV</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Sofia+Sans+Extra+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){var t="light";try{t=localStorage.getItem("cv-theme")||"light";}catch(e){}document.documentElement.setAttribute("data-theme",t);})();
+</script>
+<style>
+  /* Canopy tokens (Gaussem-Neves palette). Light is the default; dark only via data-theme="dark". */
+  :root{
+    color-scheme:light;
+    --canvas:#FAF6F1; --surface:#FFFFFF; --inset:#F2EFE9; --sand:#F5DEC9; --sand-50:#F2EDE8;
+    --text:#1D1D1B; --text-2:#55524E; --text-3:#6E6B67;
+    --line:#E6E2DD; --line-2:#D1CDC8;
+    --ocean:#336699; --ocean-6:#15558F; --ocean-7:#00467D; --ocean-8:#043762; --ocean-1:#CDDCED;
+    --sun:#FC9B2C; --sun-3:#FEBC76; --sun-7:#8B5300;
+    --chip-bg:#F2EDE8; --chip-fg:#3A3733;
+    --win-bg:#FAF6F1;
+    --shadow:0 4px 12px rgba(29,29,27,.08),0 2px 4px rgba(29,29,27,.05);
+    --font:"Manrope",-apple-system,"Segoe UI",system-ui,sans-serif;
+    --brand:"Sofia Sans Extra Condensed","Manrope",sans-serif;
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --canvas:#0E0C09; --surface:#161310; --inset:#0E0C09; --sand:#342B22; --sand-50:#25221F;
+    --text:#EEEBE6; --text-2:#B3B1AC; --text-3:#8E8C87;
+    --line:#25221F; --line-2:#34312E;
+    --ocean:#71A1D3; --ocean-6:#9DBEE2; --ocean-7:#9DBEE2; --ocean-8:#082948; --ocean-1:#082948;
+    --sun:#FC9B2C; --sun-3:#FEBC76; --sun-7:#FEBC76;
+    --chip-bg:#25221F; --chip-fg:#D7D4CF;
+    --win-bg:#1B1916;
+    --shadow:0 4px 12px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{background:var(--canvas)}
+  body{font-family:var(--font); font-weight:500; color:var(--text); line-height:1.5;
+       -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums}
+  b{font-weight:700}
+  .page{max-width:1000px; margin:24px auto; background:var(--surface); box-shadow:var(--shadow);
+        border:1px solid var(--line); border-radius:16px; overflow:hidden}
+
+  /* ---------- Header (the one gradient hero surface) ---------- */
+  header{background:linear-gradient(135deg,#336699 0%,#043762 100%); color:#fff; padding:30px 36px 24px; position:relative}
+  header::after{content:""; position:absolute; left:0; right:0; bottom:0; height:4px;
+                background:linear-gradient(90deg,var(--sun) 0 34%,var(--sun-3) 34% 58%,#FF6666 58% 78%,#00CCFF 78% 100%)}
+  .head-top{display:flex; align-items:flex-start; gap:18px}
+  .monogram{flex:none; width:56px; height:56px; border-radius:50%; border:2px solid var(--sun-3);
+            display:flex; align-items:center; justify-content:center;
+            font-family:var(--brand); font-weight:600; font-size:24px; letter-spacing:.08em; color:#FEBC76}
+  [hidden]{display:none !important}
+  .photo{flex:none; width:68px; height:68px; border-radius:50%; object-fit:cover; border:2px solid var(--sun-3); background:#043762}
+  .ctlrow{display:flex; gap:6px}
+  a.iconbtn{text-decoration:none}
+  .head-id{flex:1; min-width:0}
+  header h1{font-family:var(--brand); font-weight:600; font-size:44px; line-height:1; letter-spacing:.06em; text-transform:uppercase}
+  .tagline{margin-top:6px; font-size:15px; font-weight:600; color:#DCECFD}
+  .role{margin-top:14px; font-size:13px; font-weight:600; color:#FEE6CE}
+  .role .sep{color:var(--sun); margin:0 6px}
+  .contact{margin-top:12px; display:flex; flex-wrap:wrap; gap:6px 22px; font-size:12.5px}
+  .contact a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(254,188,118,.7)}
+  .contact a:hover{border-bottom-color:#fff}
+  .contact span{color:#E6EEF7}
+  .contact i{font-style:normal; color:#FEBC76; font-weight:700; margin-right:6px}
+
+  /* ---------- Controls (top right) ---------- */
+  .controls{flex:none; display:flex; flex-direction:column; align-items:flex-end; gap:8px}
+  .ctlgroup{display:flex; gap:2px; background:rgba(255,255,255,.10); border:1px solid rgba(254,188,118,.55); border-radius:9999px; padding:3px}
+  .ctlgroup button,.iconbtn{font:inherit; font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+       color:#FEE6CE; background:transparent; border:0; border-radius:9999px; padding:5px 11px; cursor:pointer;
+       transition:background 120ms cubic-bezier(.4,0,.2,1)}
+  .ctlgroup button:hover,.iconbtn:hover{background:rgba(255,255,255,.12)}
+  .ctlgroup button[aria-pressed="true"]{background:#FC9B2C; color:#1D1D1B}
+  .iconbtn{background:rgba(255,255,255,.10); border:1px solid rgba(254,188,118,.55); display:inline-flex; align-items:center; gap:6px; padding:6px 13px}
+  .iconbtn svg{width:13px; height:13px; fill:currentColor}
+  button:focus-visible{outline:2px solid #fff; outline-offset:2px}
+
+  /* ---------- Layout ---------- */
+  .body{display:grid; grid-template-columns:320px 1fr}
+  aside{background:var(--canvas); padding:24px 22px; border-right:1px solid var(--line)}
+  main{padding:24px 30px}
+  section{margin-bottom:22px}
+  h2{font-family:var(--brand); font-size:16px; line-height:1.1; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+     color:var(--ocean-7); margin:0 0 11px; padding-bottom:5px; border-bottom:2px solid var(--sun)}
+
+  /* ---------- Justified running text ---------- */
+  .summary p,.job .desc,.job li,.vent .vdesc{text-align:justify; text-justify:inter-word; hyphens:auto; -webkit-hyphens:auto}
+
+  .summary{font-size:13.5px; color:var(--text-2)}
+  .summary p{margin-bottom:9px}
+  .summary p:last-child{margin-bottom:0}
+  .summary b{color:var(--text)}
+
+  /* ---------- Key results ---------- */
+  .wins{display:grid; grid-template-columns:1fr; gap:7px}
+  .win{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:8px 11px}
+  .win b{display:block; color:var(--ocean-7); font-size:13px; font-weight:800; margin-bottom:1px}
+  .win span{display:block; font-size:11.5px; color:var(--text-3); line-height:1.4}
+
+  .pillar{margin-bottom:12px}
+  .pillar:last-child{margin-bottom:0}
+  .pillar h3{font-size:12px; font-weight:800; color:var(--ocean-7); margin-bottom:6px}
+  .pillar .wins{grid-template-columns:repeat(3,1fr)}
+  .inv{margin-bottom:9px; font-size:13px; color:var(--text-2)}
+  .inv:last-child{margin-bottom:0}
+  .inv b{display:block; color:var(--text); font-weight:800; font-size:13.5px}
+  .inv span{display:block; text-align:justify; hyphens:auto}
+  a.org{color:inherit; text-decoration:none; border-bottom:1px dotted var(--ocean)}
+  a.org:hover{color:var(--ocean-6)}
+  /* ---------- Experience ---------- */
+  .job{margin-bottom:16px}
+  .job:last-child{margin-bottom:0}
+  .job .top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:2px 12px; align-items:baseline}
+  .job .title{font-size:14.5px; font-weight:800; color:var(--text)}
+  .job .co{font-weight:700; color:var(--ocean-6)}
+  .job .meta{font-size:11.5px; color:var(--text-3); white-space:nowrap; font-weight:600}
+  .job .desc{font-size:12.5px; color:var(--text-3); font-style:italic; margin:3px 0 7px}
+  .job ul{list-style:none}
+  .job li{position:relative; padding-left:15px; font-size:13px; margin-bottom:4px; color:var(--text-2)}
+  .job li::before{content:""; position:absolute; left:2px; top:7.5px; width:5px; height:5px; background:var(--sun); border-radius:50%}
+  .job li b{color:var(--text)}
+
+  .vent{margin-top:8px; padding-left:14px; border-left:2px solid var(--sand)}
+  .vent .vrow{margin-bottom:8px}
+  .vent .vrow:last-child{margin-bottom:0}
+  .vent .vtitle{font-size:13px; font-weight:800; color:var(--text)}
+  .vent .vtitle .co2{color:var(--ocean-6)}
+  .vent .vmeta{font-size:11px; color:var(--text-3); font-weight:600; margin-left:6px; white-space:nowrap}
+  .vent .vdesc{font-size:12.5px; color:var(--text-2); margin-top:1px}
+  .vent .vdesc b{color:var(--text)}
+
+  /* ---------- Skills ---------- */
+  .skillgroup{margin-bottom:12px}
+  .skillgroup:last-child{margin-bottom:0}
+  .skillgroup h3{font-size:12px; color:var(--ocean-7); font-weight:800; margin-bottom:6px}
+  .chips{display:flex; flex-wrap:wrap; gap:5px}
+  .chips span{background:var(--chip-bg); color:var(--chip-fg); font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:6px; border:1px solid var(--line)}
+
+  /* ---------- Lists ---------- */
+  .edu{font-size:12.5px; margin-bottom:9px; color:var(--text-2)}
+  .edu b{display:block; color:var(--text)}
+  .edu span{display:block; color:var(--text-3); font-size:11.5px}
+  .pub{padding-left:14px; position:relative; font-size:12.5px; margin-bottom:9px; color:var(--text-2)}
+  .pub b{color:var(--text)}
+  .pub span{display:block; color:var(--text-3); font-size:11.5px; margin-top:1px}
+  .pub::before,ul.plain li::before{content:""; position:absolute; left:0; top:7px; width:5px; height:5px; background:var(--sun); border-radius:50%}
+  .lang{display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:5px; color:var(--text)}
+  .lang span{color:var(--text-3)}
+  ul.plain{list-style:none}
+  ul.plain li{position:relative; padding-left:14px; font-size:12.5px; margin-bottom:5px; color:var(--text-2)}
+  .tail{display:grid; grid-template-columns:1fr 1fr; gap:0 26px}
+  .print-grid{display:block}
+  .lastsec{margin-bottom:0}
+  .body > main{grid-column:2; grid-row:1}
+  .body > aside{grid-column:1; grid-row:1}
+  main .wins{grid-template-columns:repeat(3,1fr)}
+
+  footer{padding:12px 36px; background:var(--canvas); border-top:1px solid var(--line);
+         font-size:11px; color:var(--text-3); text-align:center}
+  footer .flinks{display:flex; flex-wrap:wrap; justify-content:center; gap:2px 0}
+  footer .flinks a{color:var(--ocean); text-decoration:none; font-weight:600}
+  footer .flinks a:hover{text-decoration:underline}
+  footer .fsep{color:var(--sun); padding:0 8px}
+  footer .fdate{margin-top:3px}
+
+  @media (max-width:860px){
+    .head-top{flex-wrap:wrap}
+    .controls{order:-1; width:100%; flex-direction:row; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+  }
+  @media (max-width:760px){
+    .page{margin:0; border-radius:0; border:0}
+    .body{grid-template-columns:1fr}
+    .body > main,.body > aside{grid-column:1; grid-row:auto}
+    main .wins,.pillar .wins{grid-template-columns:1fr}
+    .tail{grid-template-columns:1fr}
+    aside{border-right:none; border-top:1px solid var(--line); order:2}
+    main{order:1}
+    header{padding:24px 16px 20px}
+    main,aside{padding:20px 16px}
+    header h1{font-size:34px}
+  }
+
+  /* ---------- Print: A4, normal margins, single flowing column, no gaps ---------- */
+  @page{size:A4; margin:20mm 20mm 20mm 20mm}
+  @media print{
+    :root,:root[data-theme="dark"]{
+      --canvas:#FAF6F1; --surface:#FFFFFF; --sand:#F5DEC9; --text:#1D1D1B; --text-2:#3A3733; --text-3:#55524E;
+      --line:#E6E2DD; --ocean:#336699; --ocean-6:#15558F; --ocean-7:#00467D; --chip-bg:#F2EDE8; --chip-fg:#3A3733; --win-bg:#FAF6F1;
+    }
+    *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    html,body{background:#fff}
+    .page{box-shadow:none; margin:0; max-width:none; border:0; border-radius:0; overflow:visible}
+    .controls{display:none !important}
+    header{border-radius:12px; padding:20px 22px 18px; overflow:hidden}
+    header h1{font-size:38px}
+    .body{display:block}
+    main{padding:14px 0 0}
+    aside{padding:0; margin-top:18px; background:none; border:0}
+    section{margin-bottom:14px}
+    h2{break-after:avoid; page-break-after:avoid}
+    .summary{font-size:12.5px; line-height:1.5}
+    .job li{font-size:12px; margin-bottom:3px}
+    .job .desc{font-size:11.5px; margin:2px 0 5px}
+    .job{margin-bottom:12px}
+    .vent .vdesc{font-size:12px}
+    .chips span{font-size:10.5px; padding:2px 8px}
+    .win span{font-size:11px}
+    .wins.many{grid-template-columns:repeat(4,1fr)}
+    .pillar,.inv{break-inside:avoid; page-break-inside:avoid}
+    .inv{font-size:12px; margin-bottom:6px}
+    .inv b{font-size:12.5px}
+    a.org{border-bottom:0}
+    body{line-height:1.4}
+    .summary{line-height:1.45}
+    .summary p{margin-bottom:6px}
+    section{margin-bottom:11px}
+    .job .top,.job .desc{break-inside:avoid; page-break-inside:avoid}
+    .chips{gap:4px}
+    .skillgroup{margin-bottom:8px}
+    .edu,.pub{margin-bottom:6px}
+    ul.plain li{margin-bottom:3px}
+    .lang{margin-bottom:2px}
+    .win{padding:6px 9px}
+    .job{break-inside:auto}
+    .job .top,.job .desc{break-after:avoid; page-break-after:avoid}
+    .job li,.vent .vrow,.edu,.pub,.win,.skillgroup{break-inside:avoid; page-break-inside:avoid}
+    .wins{grid-template-columns:repeat(3,1fr); gap:6px}
+    .win{background:var(--win-bg)}
+    .print-grid{display:block; column-count:2; column-gap:24px; column-fill:balance}
+    .print-grid section{break-inside:auto}
+    .print-grid .lastsec{margin-bottom:16px}
+    .print-grid > div:last-child .lastsec{margin-bottom:0}
+    footer{background:none; border-top:1px solid var(--line); padding:8px 0 0; margin-top:4px; break-inside:avoid; page-break-inside:avoid}
+    footer .flinks a{color:var(--ocean-6)}
+    a{color:inherit}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="head-top">
+      <img class="photo" id="photo" alt="Gonçalo Moreira Neves" hidden>
+      <div class="monogram" id="mono" aria-hidden="true">GN</div>
+      <div class="head-id">
+        <h1>Gonçalo Moreira Neves</h1>
+        <div class="tagline" id="tagline"></div>
+      </div>
+      <div class="controls">
+        <div class="ctlgroup" id="langs" role="group" aria-label="Language"></div>
+        <div class="ctlrow">
+          <a class="iconbtn" id="atsDocx" download></a>
+          <a class="iconbtn" id="atsPdf" download></a>
+        </div>
+        <div class="ctlrow">
+          <button class="iconbtn" id="themeBtn" type="button"></button>
+          <button class="iconbtn" id="printBtn" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <div class="role" id="roleline"></div>
+    <div class="contact" id="contact"></div>
+  </header>
+
+  <div class="body">
+    <main>
+      <section><h2 id="h-profile"></h2><div class="summary" id="profile"></div></section>
+      <section><h2 id="h-results"></h2><div id="wins"></div></section>
+      <section id="s-inv"><h2 id="h-inv"></h2><div id="inv"></div></section>
+      <section><h2 id="h-exp"></h2><div id="jobs"></div></section>
+    </main>
+    <aside>
+      <section><h2 id="h-caps"></h2><div id="skills"></div></section>
+      <div class="print-grid">
+        <div>
+          <section><h2 id="h-edu"></h2><div id="edu"></div></section>
+          <section id="s-certs" class="lastsec"><h2 id="h-certs"></h2><ul class="plain" id="certs"></ul></section>
+        </div>
+        <div>
+          <section id="s-pubs"><h2 id="h-pubs"></h2><div id="pubs"></div></section>
+          <section id="s-members"><h2 id="h-members"></h2><ul class="plain" id="members"></ul></section>
+          <section class="lastsec"><h2 id="h-langs"></h2><div id="langlist"></div></section>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+"use strict";
+const META = {
+ "code": "in",
+ "photo": "data:image/jpeg;base64,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",
+ "ats": {
+  "en": {
+   "docx": "goncalo-moreira-neves_cv-ats_in_09102026-eng.docx",
+   "pdf": "goncalo-moreira-neves_cv-ats_in_09102026-eng.pdf"
+  },
+  "pt": {
+   "docx": "goncalo-moreira-neves_cv-ats_in_09102026-pt.docx",
+   "pdf": "goncalo-moreira-neves_cv-ats_in_09102026-pt.pdf"
+  }
+ },
+ "links": {
+  "Schneider Electric": "https://www.se.com",
+  "Viscon Group": "https://viscongroup.eu",
+  "Microsoft": "https://www.microsoft.com",
+  "Wageningen University & Research": "https://www.wur.nl",
+  "Photontek": "https://photontek-lighting.com",
+  "Valoya": "https://www.valoya.com",
+  "IGS": "https://www.intelligentgrowthsolutions.com",
+  "Aalto University": "https://www.aalto.fi/en",
+  "Universidade da Beira Interior": "https://www.ubi.pt",
+  "Gladwell Academy": "https://www.gladwellacademy.com",
+  "Flight Levels Academy": "https://www.flightlevels.io",
+  "Burleigh Dodds Science Publishing": "https://www.bdspublishing.com",
+  "International Society for Horticultural Science": "https://ishs.org",
+  "Cofra": "https://www.cofraholding.com",
+  "S2G Investments": "https://www.s2ginvestments.com",
+  "AgFunder": "https://agfunder.com",
+  "Sociedade Internacional de Ciência Hortícola": "https://ishs.org"
+ }
+};
+
+const CV = {
+ "en": {
+  "docTitle": "Gonçalo Moreira Neves - CV",
+  "tagline": "Investment analysis, due diligence and value creation in technology-led industrial businesses",
+  "roleline": "Investment Analysis <span class='sep'>|</span> Technical Due Diligence <span class='sep'>|</span> Valuation Support <span class='sep'>|</span> Agritech and CEA",
+  "ui": {
+   "dark": "Dark",
+   "light": "Light",
+   "print": "Print",
+   "atsWord": "ATS Word",
+   "atsPdf": "ATS PDF"
+  },
+  "h": {
+   "results": "Key results",
+   "caps": "Core skills",
+   "edu": "Education",
+   "certs": "Certifications",
+   "pubs": "Publications",
+   "langs": "Languages",
+   "profile": "Profile",
+   "exp": "Professional experience",
+   "inv": "Investment highlights"
+  },
+  "contact": [
+   {
+    "t": "Lisbon, Portugal"
+   },
+   {
+    "t": "+351 962 695 021",
+    "href": "tel:+351962695021"
+   },
+   {
+    "t": "goncalocsmn@gmail.com",
+    "href": "mailto:goncalocsmn@gmail.com"
+   },
+   {
+    "t": "linkedin.com/in/moreiraneves",
+    "href": "https://www.linkedin.com/in/moreiraneves"
+   },
+   {
+    "t": "Online CV",
+    "href": "https://goncalocsmn.github.io/goncalo-moreira-neves_cv_in/"
+   },
+   {
+    "t": "Book a call",
+    "href": "https://calendar.app.google/yEnoiSdSKdpHQAzKA"
+   }
+  ],
+  "profile": [
+   "Investor-side analyst and operator with 15+ years in capital-intensive, technology-led businesses across controlled-environment cultivation, lighting, automation and climate systems. I build the investment case from the operating drivers up (unit economics, CapEx and OpEx, scenarios, risks), run technical due diligence, and present the result to boards and investors.",
+   "I have contributed to funding rounds from seed to Series D, experienced an exit as a founder, and worked as an analyst on agritech investments for family-office investors, with first-hand exposure to the agritech investor base (S2G Investments, AgFunder, Cofra). I build AI-assisted models, due diligence checklists and dashboards, with every assumption sourced and checked against primary data. Seeking a hands-on investment analyst or due diligence role in agrifood, controlled environment agriculture or industrial technology."
+  ],
+  "skills": [
+   [
+    "Investment analysis",
+    [
+     "Financial modelling",
+     "Business cases and unit economics",
+     "Scenario and sensitivity analysis",
+     "DCF and comparable valuation support",
+     "CapEx and OpEx modelling",
+     "Cultivation economics (energy, CapEx per m², labour, yield)",
+     "Technical and commercial due diligence",
+     "Market research and sector trends"
+    ]
+   ],
+   [
+    "Capital markets exposure",
+    [
+     "Seed, Series A, B, C and D rounds",
+     "Investor materials and board reporting",
+     "Shareholder and exit experience"
+    ]
+   ],
+   [
+    "Industry",
+    [
+     "Agrifood and ag-tech innovation",
+     "Controlled-environment cultivation",
+     "Industrial automation",
+     "Climate and energy systems",
+     "Technical lighting",
+     "Regulated-sector operations"
+    ]
+   ],
+   [
+    "Tools and AI",
+    [
+     "Generative AI (Claude, ChatGPT, Perplexity)",
+     "Tableau",
+     "Jira and Asana",
+     "Microsoft 365",
+     "Google Workspace"
+    ]
+   ]
+  ],
+  "jobs": [
+   {
+    "title": "Managing Partner",
+    "co": "APTA Advisory",
+    "meta": "Aug 2026 - Present · Lisbon",
+    "desc": "Independent due diligence and business strategy firm.",
+    "b": [
+     "Lead the firm and its service model: CapEx and OpEx due diligence for buyers of technical systems (lighting, climate and automation); strategy for suppliers",
+     "Advise boards, investors and operations teams on investment cases, supplier selection, unit economics and value creation; own go-to-market, pricing and partnerships",
+     "Designed an outcome-linked fee model (share of verified savings, or fixed fee)"
+    ]
+   },
+   {
+    "title": "co-CEO and Commercial and Marketing Director (interim)",
+    "co": "Lumatek Group",
+    "meta": "Dec 2024 - Jul 2026 · Lisbon",
+    "desc": "Industrial manufacturer of technical lighting systems (HID and LED), 20 years in market, two brands (Lumatek and Photontek), international distribution.",
+    "b": [
+     "Led a full commercial and cultural restructuring: resized teams, closed unprofitable markets, opened new geographies and channels",
+     "Cut about 60% of global costs through a cost-reduction strategy, with the CFO, COO and CPO",
+     "Grew a key segment 210% in 2025 and reached, in Q1 2026, a pace 4x that of 2025",
+     "Turned the organisation into a data-driven company and removed internal silos, enabling data-driven decisions"
+    ]
+   },
+   {
+    "title": "VP Business Development &amp; Head of AgriTech Partnerships",
+    "co": "IGS",
+    "meta": "Aug 2021 - Jul 2024 · Edinburgh and Amsterdam",
+    "desc": "Award-winning industrial technology company: automation, IoT and environmental control systems, six patent families.",
+    "b": [
+     "Opened two new revenue streams generating €20M+",
+     "Reduced product OpEx by up to 40% and CapEx per m² by up to 15%",
+     "Closed partnerships with Schneider Electric, Viscon Group, Microsoft, Plant Lighting and Wageningen University &amp; Research",
+     "Built and led the business development team, reporting to the CEO and COO"
+    ]
+   },
+   {
+    "title": "Director of Farm Hardware",
+    "co": "Infarm",
+    "meta": "Mar 2020 - Mar 2021 · Berlin",
+    "desc": "European industrial scale-up of modular controlled-environment production systems, with an installed equipment base across several countries.",
+    "b": [
+     "Grew the technical team from about 40 to 100 people in one year",
+     "Cut labour cost per unit by 83% through automation and new process flows",
+     "Reduced energy cost per unit by 40% through a new HVAC design and rent cost per m² by 61%; raised output per m² by 73%"
+    ]
+   },
+   {
+    "title": "Founder and executive roles, five companies",
+    "co": "",
+    "meta": "Jun 2016 - Jan 2020 · Amsterdam",
+    "desc": "",
+    "b": [
+     "Founder and CEO, Spectron Light Science (Nov 2016 - Dec 2017): three LED lighting product lines; company acquired by a leading sector player 14 months after founding",
+     "Founder and CTO, OneFarm BV (Jan 2017 - Jan 2020): €1M seed (valuation €5M+); supported the €9M Series A (valuation €36M+)",
+     "Founder and CEO, BemStudio (Jun 2016 - May 2020): engineering and management consultancy in the Netherlands"
+    ]
+   },
+   {
+    "title": "Director of Business Development",
+    "co": "Valoya",
+    "meta": "Jun 2011 - May 2016 · Helsinki and NL",
+    "desc": "Manufacturer of technical LED lighting systems. Three roles in five years: Technical Manager, Solution Manager, Director of Business Development. Joined as a minority shareholder.",
+    "b": [
+     "Closed the company's first commercial contract, above €300,000; grew revenue from €0 to €10M+",
+     "Expanded to more than 50 countries in Europe, Southeast Asia, Japan and North America; opened the Amsterdam office"
+    ]
+   },
+   {
+    "title": "Researcher",
+    "co": "Aalto University",
+    "meta": "Apr 2009 - May 2011 · Helsinki",
+    "desc": "Solid-state lighting. Projects SSHLighting (2009-2011) and LEDFlowers (2008-2011).",
+    "b": []
+   }
+  ],
+  "edu": [
+   [
+    "M.Sc.(Tech.) Electrical Engineering",
+    "Specialisation in Lighting and Electrical Installations in Buildings, Aalto University, Finland (2010-2012)"
+   ],
+   [
+    "M.Sc. minor, International Design Business Management",
+    "Aalto University (2011-2012)"
+   ],
+   [
+    "BSc in Electromechanical Engineering",
+    "Universidade da Beira Interior (2004-2009). Erasmus at TKK, now Aalto (2009)"
+   ]
+  ],
+  "certs": [
+   "Leading SAFe and Agile for Hardware (Gladwell Academy)",
+   "Flight Levels (Flight Levels Academy)",
+   "Product Development Project (Design Factory, Aalto)",
+   "Mental Health First Aider (Worksafe UK)"
+  ],
+  "pubs": [
+   "Co-author, Advances in Plant Factories (Burleigh Dodds Science Publishing, 2023)",
+   "Member, International Society for Horticultural Science (ISHS)"
+  ],
+  "langs": [
+   [
+    "Portuguese",
+    "Native"
+   ],
+   [
+    "English",
+    "Full professional"
+   ],
+   [
+    "Spanish",
+    "Advanced"
+   ],
+   [
+    "French",
+    "Basic"
+   ],
+   [
+    "Finnish",
+    "Beginner"
+   ]
+  ],
+  "foot": "References available on request. Updated 2026-09-30.",
+  "wins": [
+   [
+    "€50M",
+    "IGS Series B, valuation €200M+ (contributed)"
+   ],
+   [
+    "€200M",
+    "Infarm Series D, valuation €1B+ (contributed)"
+   ],
+   [
+    "€1M + €9M",
+    "OneFarm seed and Series A, valuations €5M+ and €36M+"
+   ],
+   [
+    "14 months",
+    "Spectron: founding to acquisition (exit)"
+   ],
+   [
+    "-40% / -15%",
+    "product OpEx / CapEx per m² (IGS)"
+   ],
+   [
+    "~60%",
+    "global cost reduction, with the CFO, COO and CPO (Lumatek Group)"
+   ]
+  ],
+  "inv": [
+   [
+    "Agritech investors",
+    "Analyst on agritech investments for family-office investors (clients under NDA): technical and commercial due diligence, investment cases and market analysis. IGS investor base includes S2G Investments and AgFunder (Series A) and Cofra's Sustainable Food Group (Series C, 2024)."
+   ],
+   [
+    "APTA Advisory (2026)",
+    "Independent due diligence firm: CapEx and OpEx due diligence for buyers of technical systems; investment cases, unit economics and value creation for boards and investors."
+   ],
+   [
+    "IGS, Series B (€50M)",
+    "Contributed to the round (valuation €200M+); opened two revenue streams worth €20M+; cut product OpEx by up to 40% and CapEx per m² by up to 15%."
+   ],
+   [
+    "Infarm, Series D (€200M)",
+    "Contributed to the round (valuation €1B+); delivered -83% labour cost and -40% energy cost per unit, +73% output per m²."
+   ],
+   [
+    "OneFarm, seed and Series A",
+    "Co-founder and CTO: €1M seed (valuation €5M+); supported the €9M Series A (valuation €36M+)."
+   ],
+   [
+    "Exits and shareholdings",
+    "Founder of Spectron Light Science, acquired 14 months after founding. Minority shareholder in Valoya from joining; contributed to growth from €0 to €10M+ in revenue."
+   ],
+   [
+    "Technical due diligence (2024-2026)",
+    "Independent consultant: due diligence on companies, products and platforms for investment and acquisition decisions; value-creation frameworks and KPI benchmarks."
+   ]
+  ],
+  "atsSummary": "Investment analyst and operator with 15+ years in capital-intensive agrifood, controlled environment agriculture and industrial technology businesses. Builds investment cases from operating drivers (unit economics, CapEx, OpEx, scenarios, risks), runs technical and commercial due diligence and presents to boards and investors. Contributed to venture-backed funding rounds from seed to Series D (IGS €50M, Infarm €200M), exited a founded company in 14 months and analysed agritech investments for family-office investors."
+ },
+ "pt": {
+  "docTitle": "Gonçalo Moreira Neves - CV",
+  "tagline": "Análise de investimento, due diligence e criação de valor em negócios industriais de base tecnológica",
+  "roleline": "Análise de Investimento <span class='sep'>|</span> Due Diligence Técnica <span class='sep'>|</span> Apoio à Avaliação <span class='sep'>|</span> Agritech e Agricultura em Ambiente Controlado",
+  "ui": {
+   "dark": "Escuro",
+   "light": "Claro",
+   "print": "Imprimir",
+   "atsWord": "Word ATS",
+   "atsPdf": "PDF ATS"
+  },
+  "h": {
+   "results": "Principais resultados",
+   "caps": "Competências",
+   "edu": "Formação",
+   "certs": "Certificações",
+   "pubs": "Publicações",
+   "langs": "Línguas",
+   "profile": "Perfil",
+   "exp": "Experiência profissional",
+   "inv": "Destaques de investimento"
+  },
+  "contact": [
+   {
+    "t": "Lisboa, Portugal"
+   },
+   {
+    "t": "+351 962 695 021",
+    "href": "tel:+351962695021"
+   },
+   {
+    "t": "goncalocsmn@gmail.com",
+    "href": "mailto:goncalocsmn@gmail.com"
+   },
+   {
+    "t": "linkedin.com/in/moreiraneves",
+    "href": "https://www.linkedin.com/in/moreiraneves"
+   },
+   {
+    "t": "CV online",
+    "href": "https://goncalocsmn.github.io/goncalo-moreira-neves_cv_in/"
+   },
+   {
+    "t": "Marcar uma chamada",
+    "href": "https://calendar.app.google/yEnoiSdSKdpHQAzKA"
+   }
+  ],
+  "profile": [
+   "Analista e operador do lado do investidor, com mais de 15 anos em negócios intensivos em capital e de base tecnológica, em cultivo em ambiente controlado, iluminação, automação e sistemas de climatização. Construo o caso de investimento a partir dos fatores operacionais (economia unitária, CapEx e OpEx, cenários, riscos), conduzo due diligence técnica e apresento o resultado a conselhos de administração e investidores.",
+   "Contribuí para rondas de financiamento desde seed até Série D, vivi uma saída como fundador e trabalhei como analista em investimentos em agritech para investidores de family office, com contacto direto com a base de investidores do setor (S2G Investments, AgFunder, Cofra). Construo modelos, checklists de due diligence e dashboards com apoio de IA, com cada pressuposto fundamentado em fontes e confrontado com dados primários. Procuro uma função de analista de investimento ou de due diligence, com mão na massa, em agroalimentar, agricultura em ambiente controlado ou tecnologia industrial."
+  ],
+  "skills": [
+   [
+    "Análise de investimento",
+    [
+     "Modelação financeira",
+     "Casos de negócio e economia unitária",
+     "Análise de cenários e de sensibilidade",
+     "Apoio a avaliação por DCF e comparáveis",
+     "Modelação de CapEx e OpEx",
+     "Economia do cultivo (energia, CapEx por m², mão de obra, rendimento)",
+     "Due diligence técnica e comercial",
+     "Estudos de mercado e tendências setoriais"
+    ]
+   ],
+   [
+    "Contacto com mercados de capitais",
+    [
+     "Rondas seed, Série A, B, C e D",
+     "Materiais para investidores e reporte a conselhos",
+     "Experiência como acionista e em saídas"
+    ]
+   ],
+   [
+    "Setor",
+    [
+     "Inovação agroalimentar e ag-tech",
+     "Cultivo em ambiente controlado",
+     "Automação industrial",
+     "Sistemas de clima e energia",
+     "Iluminação técnica",
+     "Operações em setores regulados"
+    ]
+   ],
+   [
+    "Ferramentas e IA",
+    [
+     "IA generativa (Claude, ChatGPT, Perplexity)",
+     "Tableau",
+     "Jira e Asana",
+     "Microsoft 365",
+     "Google Workspace"
+    ]
+   ]
+  ],
+  "jobs": [
+   {
+    "title": "Managing Partner",
+    "co": "APTA Advisory",
+    "meta": "Ago 2026 - Presente · Lisboa",
+    "desc": "Empresa independente de due diligence e estratégia de negócio.",
+    "b": [
+     "Lidero a empresa e o seu modelo de serviço: due diligence de CapEx e OpEx para compradores de sistemas técnicos (iluminação, clima e automação); estratégia para fornecedores",
+     "Aconselho conselhos de administração, investidores e equipas de operações em casos de investimento, seleção de fornecedores, economia unitária e criação de valor; responsável por go-to-market, preços e parcerias",
+     "Desenhei um modelo de honorários ligado a resultados (percentagem das poupanças verificadas, ou valor fixo)"
+    ]
+   },
+   {
+    "title": "co-CEO e Diretor Comercial e de Marketing (interino)",
+    "co": "Lumatek Group",
+    "meta": "Dez 2024 - Jul 2026 · Lisboa",
+    "desc": "Fabricante industrial de sistemas de iluminação técnica (HID e LED), 20 anos de mercado, duas marcas (Lumatek e Photontek), distribuição internacional.",
+    "b": [
+     "Reestruturação comercial e cultural completa: equipas redimensionadas, mercados sem rentabilidade encerrados, novas geografias e canais abertos",
+     "Estratégia de redução de custos que cortou cerca de 60% dos custos globais, com o CFO, o COO e o CPO",
+     "Crescimento de 210% num segmento-chave em 2025 e, no Q1 2026, um ritmo 4x superior ao de 2025",
+     "Organização transformada em empresa orientada por dados; silos internos eliminados"
+    ]
+   },
+   {
+    "title": "VP Business Development &amp; Head of AgriTech Partnerships",
+    "co": "IGS",
+    "meta": "Ago 2021 - Jul 2024 · Edimburgo e Amesterdão",
+    "desc": "Empresa premiada de tecnologia industrial: automação, IoT e sistemas de controlo ambiental, seis famílias de patentes.",
+    "b": [
+     "Dois novos fluxos de receita, gerando 20 M+€",
+     "OpEx de produto reduzido até 40%; CapEx por m² reduzido até 15%",
+     "Parcerias com Schneider Electric, Viscon Group, Microsoft, Plant Lighting e Wageningen University &amp; Research",
+     "Construí e liderei a equipa de desenvolvimento de negócio, com reporte ao CEO e ao COO"
+    ]
+   },
+   {
+    "title": "Director of Farm Hardware",
+    "co": "Infarm",
+    "meta": "Mar 2020 - Mar 2021 · Berlim",
+    "desc": "Scale-up industrial europeia de sistemas modulares de produção em ambiente controlado, com parque de equipamento instalado em vários países.",
+    "b": [
+     "Equipa técnica de cerca de 40 para 100 pessoas num ano",
+     "-83% de custo de mão de obra por unidade, via automação e novos fluxos de processo",
+     "-40% de custo de energia por unidade via novo desenho de AVAC; -61% de custo de renda por m²; +73% de produção por m²"
+    ]
+   },
+   {
+    "title": "Fundador e cargos executivos, cinco empresas",
+    "co": "",
+    "meta": "Jun 2016 - Jan 2020 · Amesterdão",
+    "desc": "",
+    "b": [
+     "Fundador e CEO, Spectron Light Science (Nov 2016 - Dez 2017): três linhas de produto de iluminação LED; empresa adquirida por um player de referência do sector 14 meses após a fundação",
+     "Fundador e CTO, OneFarm BV (Jan 2017 - Jan 2020): seed de 1 M€ (avaliação de 5 M+€); apoio à Série A de 9 M€ (avaliação de 36 M+€)",
+     "Fundador e CEO, BemStudio (Jun 2016 - Mai 2020): consultora de engenharia e gestão nos Países Baixos"
+    ]
+   },
+   {
+    "title": "Diretor de Desenvolvimento de Negócio",
+    "co": "Valoya",
+    "meta": "Jun 2011 - Mai 2016 · Helsínquia e Países Baixos",
+    "desc": "Fabricante de sistemas de iluminação LED técnica. Três cargos em cinco anos: Technical Manager, Solution Manager, Director of Business Development. Entrei como acionista minoritário.",
+    "b": [
+     "Primeiro contrato comercial da empresa, superior a 300 000€; receita de 0 para 10 M+€",
+     "Expansão a mais de 50 países na Europa, Sudeste Asiático, Japão e América do Norte; abertura do escritório de Amesterdão"
+    ]
+   },
+   {
+    "title": "Investigador",
+    "co": "Aalto University",
+    "meta": "Abr 2009 - Mai 2011 · Helsínquia",
+    "desc": "Iluminação de estado sólido. Projetos SSHLighting (2009-2011) e LEDFlowers (2008-2011).",
+    "b": []
+   }
+  ],
+  "edu": [
+   [
+    "M.Sc.(Tech.) Engenharia Eletrotécnica",
+    "Especialização em Luminotecnia e Instalações Elétricas em Edifícios, Aalto University, Finlândia (2010-2012)"
+   ],
+   [
+    "M.Sc. minor, International Design Business Management",
+    "Aalto University (2011-2012)"
+   ],
+   [
+    "Licenciatura em Engenharia Eletromecânica",
+    "Universidade da Beira Interior (2004-2009). Erasmus na TKK, hoje Aalto (2009)"
+   ]
+  ],
+  "certs": [
+   "Leading SAFe e Agile for Hardware (Gladwell Academy)",
+   "Flight Levels (Flight Levels Academy)",
+   "Product Development Project (Design Factory, Aalto)",
+   "Mental Health First Aider (Worksafe UK)"
+  ],
+  "pubs": [
+   "Coautor, Advances in Plant Factories (Burleigh Dodds Science Publishing, 2023)",
+   "Membro, Sociedade Internacional de Ciência Hortícola (ISHS)"
+  ],
+  "langs": [
+   [
+    "Português",
+    "Nativo"
+   ],
+   [
+    "Inglês",
+    "Profissional pleno"
+   ],
+   [
+    "Espanhol",
+    "Avançado"
+   ],
+   [
+    "Francês",
+    "Básico"
+   ],
+   [
+    "Finlandês",
+    "Iniciado"
+   ]
+  ],
+  "foot": "Referências disponíveis a pedido. Atualizado a 2026-09-30.",
+  "wins": [
+   [
+    "50 M€",
+    "IGS Série B, avaliação 200 M€+ (contributo)"
+   ],
+   [
+    "200 M€",
+    "Infarm Série D, avaliação 1 000 M€+ (contributo)"
+   ],
+   [
+    "1 M€ + 9 M€",
+    "OneFarm seed e Série A, avaliações 5 M€+ e 36 M€+"
+   ],
+   [
+    "14 meses",
+    "Spectron: da fundação à aquisição (saída)"
+   ],
+   [
+    "-40% / -15%",
+    "OpEx de produto / CapEx por m² (IGS)"
+   ],
+   [
+    "~60%",
+    "redução dos custos globais, com o CFO, o COO e o CPO (Lumatek Group)"
+   ]
+  ],
+  "inv": [
+   [
+    "Investidores em agritech",
+    "Analista em investimentos em agritech para investidores de family office (clientes sob NDA): due diligence técnica e comercial, casos de investimento e análise de mercado. A base de investidores da IGS inclui S2G Investments e AgFunder (Série A) e a Sustainable Food Group da Cofra (Série C, 2024)."
+   ],
+   [
+    "APTA Advisory (2026)",
+    "Empresa independente de due diligence: due diligence de CapEx e OpEx para compradores de sistemas técnicos; casos de investimento, economia unitária e criação de valor para conselhos de administração e investidores."
+   ],
+   [
+    "IGS, Série B (50 M€)",
+    "Contributo para a ronda (avaliação 200 M€+); abertura de dois fluxos de receita superiores a 20 M€; OpEx de produto reduzido até 40% e CapEx por m² até 15%."
+   ],
+   [
+    "Infarm, Série D (200 M€)",
+    "Contributo para a ronda (avaliação 1 000 M€+); -83% de custo de mão de obra e -40% de custo de energia por unidade, +73% de produção por m²."
+   ],
+   [
+    "OneFarm, seed e Série A",
+    "Cofundador e CTO: seed de 1 M€ (avaliação 5 M€+); apoio à Série A de 9 M€ (avaliação 36 M€+)."
+   ],
+   [
+    "Saídas e participações",
+    "Fundador da Spectron Light Science, adquirida 14 meses após a fundação. Acionista minoritário da Valoya desde a entrada; contributo para o crescimento de 0 para 10 M€+ de receita."
+   ],
+   [
+    "Due diligence técnica (2024-2026)",
+    "Consultor independente: due diligence a empresas, produtos e plataformas para decisões de investimento e aquisição; frameworks de criação de valor e benchmarks de KPI."
+   ]
+  ],
+  "atsSummary": "Analista de investimento e operador com mais de 15 anos em negócios de capital intensivo em agroalimentar, agricultura em ambiente controlado e tecnologia industrial. Constrói casos de investimento a partir dos drivers operacionais (economia unitária, CapEx, OpEx, cenários, riscos), realiza due diligence técnica e comercial e apresenta a conselhos e investidores. Contribuiu para rondas de capital de risco de seed a Série D (IGS 50 M€, Infarm 200 M€), vendeu uma empresa que fundou em 14 meses e analisou investimentos agritech para family offices."
+ }
+};
+
+
+const LABELS = {en:"EN", pt:"PT", es:"ES", fr:"FR"};
+const LANGS = Object.keys(CV);
+const $ = id => document.getElementById(id);
+const SUN = '<svg viewBox="0 0 24 24"><path d="M12 17a5 5 0 100-10 5 5 0 000 10zm0 2a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zm0-18a1 1 0 011 1v2a1 1 0 11-2 0V2a1 1 0 011-1zm10 11a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM5 12a1 1 0 01-1 1H2a1 1 0 110-2h2a1 1 0 011 1z"/></svg>';
+const MOON = '<svg viewBox="0 0 24 24"><path d="M21.53 15.93A9 9 0 018.07 2.47a9.5 9.5 0 1013.46 13.46z"/></svg>';
+const PRINTER = '<svg viewBox="0 0 24 24"><path d="M7 3h10v4H7V3zm12 6H5a3 3 0 00-3 3v5h4v4h12v-4h4v-5a3 3 0 00-3-3zm-3 10H8v-5h8v5z"/></svg>';
+const DOWN = '<svg viewBox="0 0 24 24"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3zM5 19h14v2H5v-2z"/></svg>';
+
+function initialLang(){
+  let q = "";
+  try { q = new URLSearchParams(location.search).get("lang") || ""; } catch(e) {}
+  return LANGS.indexOf(q) > -1 ? q : LANGS[0];
+}
+let state = { lang: initialLang(), theme: (document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light") };
+
+function setTheme(t){
+  state.theme = t;
+  document.documentElement.setAttribute("data-theme", t);
+  try { localStorage.setItem("cv-theme", t); } catch(e) {}
+  const u = CV[state.lang].ui;
+  $("themeBtn").innerHTML = (t === "light" ? MOON : SUN) + "<span>" + (t === "light" ? u.dark : u.light) + "</span>";
+  $("themeBtn").setAttribute("aria-label", t === "light" ? u.dark : u.light);
+}
+
+function list(id, items, fn){ $(id).innerHTML = (items || []).map(fn).join(""); }
+function toggle(id, items){ $(id).hidden = !(items && items.length); }
+
+function render(){
+  const d = CV[state.lang];
+  document.documentElement.lang = state.lang;
+  document.title = d.docTitle;
+  $("tagline").textContent = d.tagline;
+  $("roleline").innerHTML = d.roleline;
+  $("contact").innerHTML = d.contact.map(c => c.href
+    ? '<a href="' + c.href + '"' + (c.href.indexOf("http") === 0 ? ' target="_blank" rel="noopener"' : '') + '>' + c.t + '</a>'
+    : '<span>' + c.t + '</span>').join("");
+
+  ["results","caps","edu","certs","pubs","members","langs","profile","exp","inv"].forEach(k => { if ($("h-" + k)) $("h-" + k).textContent = d.h[k] || ""; });
+
+  $("profile").innerHTML = d.profile.map(p => "<p>" + p + "</p>").join("");
+  const winCard = w => '<div class="win"><b>' + w[0] + '</b><span>' + w[1] + '</span></div>';
+  if (d.pillars) {
+    $("wins").className = "pillars";
+    $("wins").innerHTML = d.pillars.map(p => '<div class="pillar"><h3>' + p.h + '</h3><div class="wins">' + p.w.map(winCard).join("") + '</div></div>').join("");
+  } else {
+    $("wins").className = "wins" + (d.wins.length > 9 ? " many" : "");
+    $("wins").innerHTML = d.wins.map(winCard).join("");
+  }
+  list("inv", d.inv, r => '<div class="inv"><b>' + r[0] + '</b><span>' + r[1] + '</span></div>'); toggle("s-inv", d.inv);
+  list("skills", d.skills, g => '<div class="skillgroup"><h3>' + g[0] + '</h3><div class="chips">' + g[1].map(s => "<span>" + s + "</span>").join("") + '</div></div>');
+  list("edu", d.edu, e => '<div class="edu"><b>' + e[0] + '</b><span>' + e[1] + '</span></div>');
+  list("certs", d.certs, c => "<li>" + c + "</li>"); toggle("s-certs", d.certs);
+  list("pubs", d.pubs, p => '<div class="pub">' + (typeof p === "string" ? p : p[0] + '<span>' + p[1] + '</span>') + '</div>'); toggle("s-pubs", d.pubs);
+  list("members", d.members, m => "<li>" + m + "</li>"); toggle("s-members", d.members);
+  list("langlist", d.langs, l => '<div class="lang"><b style="font-weight:600">' + l[0] + '</b><span>' + l[1] + '</span></div>');
+
+  $("jobs").innerHTML = d.jobs.map(j => {
+    let h = '<div class="job"><div class="top"><div class="title">' + j.title + (j.co ? ' · <span class="co">' + j.co + '</span>' : '') + '</div><div class="meta">' + j.meta + '</div></div>';
+    if (j.desc) h += '<div class="desc">' + j.desc + '</div>';
+    if (j.b && j.b.length) h += "<ul>" + j.b.map(x => "<li>" + x + "</li>").join("") + "</ul>";
+    if (j.v && j.v.length) h += '<div class="vent">' + j.v.map(v => '<div class="vrow"><div class="vtitle">' + v[0] + ' · <span class="co2">' + v[1] + '</span><span class="vmeta">' + v[2] + '</span></div><div class="vdesc">' + v[3] + '</div></div>').join("") + '</div>';
+    return h + "</div>";
+  }).join("");
+  const fl = d.contact.filter(c => c.href).map(c => '<a href="' + c.href + '"' + (c.href.indexOf("http") === 0 ? ' target="_blank" rel="noopener"' : '') + '>' + (c.href.indexOf("linkedin") > -1 ? "LinkedIn" : c.t) + '</a>');
+  const fparts = d.foot.split(" · ");
+  $("foot").innerHTML = '<div class="flinks">' + fl.join('<span class="fsep">·</span>') + '</div><div class="fdate">Gonçalo Moreira Neves · ' + fparts[fparts.length - 1] + '</div>';
+
+  const files = META.ats[state.lang] || META.ats[LANGS[0]];
+  $("atsDocx").href = files.docx; $("atsDocx").innerHTML = DOWN + "<span>" + d.ui.atsWord + "</span>";
+  $("atsPdf").href = files.pdf;   $("atsPdf").innerHTML  = DOWN + "<span>" + d.ui.atsPdf + "</span>";
+  $("printBtn").innerHTML = PRINTER + "<span>" + d.ui.print + "</span>";
+  $("printBtn").setAttribute("aria-label", d.ui.print);
+
+  const wrap = $("langs"); wrap.innerHTML = ""; wrap.hidden = LANGS.length < 2;
+  LANGS.forEach(code => {
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = LABELS[code] || code.toUpperCase();
+    b.setAttribute("aria-pressed", String(code === state.lang));
+    b.setAttribute("aria-label", LABELS[code] || code);
+    b.addEventListener("click", () => { state.lang = code; render(); });
+    wrap.appendChild(b);
+  });
+  setTheme(state.theme);
+  linkify();
+}
+
+/* Link the first mention of each organisation (META.links) in the body. */
+function linkify(){
+  const L = META.links || {};
+  const keys = Object.keys(L).sort((a, b) => b.length - a.length);
+  if (!keys.length) return;
+  const done = {};
+  const walker = document.createTreeWalker(document.querySelector(".body"), NodeFilter.SHOW_TEXT, {
+    acceptNode: n => n.parentElement.closest("a,h2,h3") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+  });
+  const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    for (const k of keys) {
+      if (done[k]) continue;
+      const i = node.nodeValue.indexOf(k);
+      if (i < 0) continue;
+      done[k] = true;
+      const rest = node.splitText(i); rest.splitText(k.length);
+      const a = document.createElement("a");
+      a.href = L[k]; a.target = "_blank"; a.rel = "noopener"; a.className = "org"; a.textContent = k;
+      rest.parentNode.replaceChild(a, rest);
+      return;
+    }
+  });
+}
+
+if (META.photo) { $("photo").src = META.photo; $("photo").hidden = false; $("mono").hidden = true; }
+$("themeBtn").addEventListener("click", () => setTheme(state.theme === "light" ? "dark" : "light"));
+$("printBtn").addEventListener("click", () => window.print());
+render();
+</script>
+</body>
+</html>
