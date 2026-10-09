@@ -208,9 +208,9 @@
     .job .desc{font-size:11.5px; margin:2px 0 5px}
     .job{margin-bottom:12px}
     .vent .vdesc{font-size:12px}
-    .chips span{font-size:10.5px; padding:2px 8px}
-    .win span{font-size:11px}
-    .wins.many{grid-template-columns:repeat(4,1fr)}
+    .chips span{font-size:11px; padding:1px 7px; line-height:1.45}
+    .win span{font-size:11.5px; line-height:1.35}
+    .wins.many{grid-template-columns:repeat(3,1fr)}
     .pillar,.inv{break-inside:avoid; page-break-inside:avoid}
     .inv{font-size:12px; margin-bottom:6px}
     .inv b{font-size:12.5px}
@@ -227,17 +227,29 @@
     .lang{margin-bottom:2px}
     .win{padding:6px 9px}
     .job{break-inside:auto}
-    .job .top,.job .desc{break-after:avoid; page-break-after:avoid}
-    .job li,.vent .vrow,.edu,.pub,.win,.skillgroup{break-inside:avoid; page-break-inside:avoid}
+    .job .top{break-after:avoid; page-break-after:avoid}
+    .job li,.vent .vrow,.edu,.pub,.win{break-inside:avoid; page-break-inside:avoid}
+    .skillgroup h3{break-after:avoid; page-break-after:avoid}
+    .chips span{break-inside:avoid}
     .wins{grid-template-columns:repeat(3,1fr); gap:6px}
     .win{background:var(--win-bg)}
     .print-grid{display:block; column-count:2; column-gap:24px; column-fill:balance}
     .print-grid section{break-inside:auto}
-    .print-grid .lastsec{margin-bottom:16px}
+    #s-certs,#s-pubs,#s-members{break-inside:avoid; page-break-inside:avoid}
+    .lang{break-inside:avoid}
+    .print-grid section,.print-grid .lastsec{margin-bottom:14px}
     .print-grid > div:last-child .lastsec{margin-bottom:0}
     footer{background:none; border-top:1px solid var(--line); padding:8px 0 0; margin-top:4px; break-inside:avoid; page-break-inside:avoid}
     footer .flinks a{color:var(--ocean-6)}
     a{color:inherit}
+    .job li::before,.pub::before,ul.plain li::before{top:6.5px}
+    .job .meta,.vent .vmeta{font-size:11px}
+    .contact{gap:5px 16px; font-size:12px}
+    html.tight section{margin-bottom:8px}
+    html.tight .job{margin-bottom:8px}
+    html.tight .summary p{margin-bottom:4px}
+    html.tight .skillgroup{margin-bottom:5px}
+    html.tight .job li{margin-bottom:2px}
   }
 </style>
 </head>
@@ -546,7 +558,7 @@ const CV = {
     "Beginner"
    ]
   ],
-  "foot": "References available on request. Updated 2026-09-30.",
+  "foot": "References available on request. Updated 2026-10-09.",
   "wins": [
    [
     "€50M",
@@ -822,7 +834,7 @@ const CV = {
     "Iniciado"
    ]
   ],
-  "foot": "Referências disponíveis a pedido. Atualizado a 2026-09-30.",
+  "foot": "Referências disponíveis a pedido. Atualizado a 2026-10-09.",
   "wins": [
    [
     "50 M€",
